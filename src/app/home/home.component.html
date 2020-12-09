@@ -1,0 +1,17 @@
+<div>
+  <h4>Rovers</h4>
+  <ul *ngIf="rovers$ | async as rovers">
+    <li *ngFor=" let rover of rovers.rovers">
+      <a routerLink="/rover/{{rover.name | lowercase}}">{{rover.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<div>
+  Latest Images
+  <ul *ngIf="data$ | async as data">
+    <li *ngFor="let pic of data.photos">
+      <img [src]="pic.img_src" alt="" width="200px">
+    </li>
+  </ul>
+</div>
